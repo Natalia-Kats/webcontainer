@@ -16,7 +16,7 @@ jobs:
         password: ${{ secrets.REGISTRY_PASSWORD }}
 
     - run: |
-        docker build . -t nkatsacr.azurecr.io/sampleapp:${{ github.sha }}
+        docker build -t nkatsacr.azurecr.io/sampleapp:${{ github.sha }}
         docker push nkatsacr.azurecr.io/sampleapp:${{ github.sha }}     
 
     - uses: azure/webapps-deploy@v2
